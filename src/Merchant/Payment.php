@@ -9,9 +9,8 @@ use GuzzleHttp\RequestOptions;
 use Intellectmoney\Authenticate;
 use Intellectmoney\Configurations;
 use Intellectmoney\Models\Response;
-use Intellectmoney\SampleConf;
 
-class Payment extends SampleConf
+class Payment extends Configurations
 {
     private Client $client;
     private static string $baseUrl = "https://api.intellectmoney.ru/merchant/";
