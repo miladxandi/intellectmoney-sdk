@@ -1,6 +1,6 @@
 {
     "name": "miladxandi/intellectmoney-sdk",
-    "description": "Intellectmoney project",
+    "description": "Intellectmoney PHP SDK",
     "type": "library",
     "license": "MIT",
     "autoload": {
