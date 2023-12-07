@@ -14,23 +14,16 @@ class Authenticate extends Configurations
         header("Location: ".$url."returnUrl=".$redirectUrl."?"."&email=".$email);
     }
 
-    /*
-     * requestData = [eshopid,invoice,amount]
-     */
+
     public static function generateSignature(array $requestData): string
     {
-        $i = 0;
-        $signature = "";
-        foreach ($requestData as $item){
-            if ($i == 0 && $item!=null){
-                $signature .= $item;
+        foreach ($requestData as &$item) {
+            if ($item === null) {
+                $item = '';
             }
-            elseif ($i != 0 && $item!=null){
-                $signature .="::$item";
-            }
-            $i++;
         }
 
-        return md5($signature);
+        $signatureString = implode('::', $requestData);
+        return md5(mb_convert_encoding($signatureString, 'UTF-8'));
     }
 }
