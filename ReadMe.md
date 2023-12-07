@@ -2,7 +2,7 @@
 
 ```
 try{
-    \Intellectmoney\SampleConf::$eshopId = 111111;
+    \Intellectmoney\Configurations::$eshopId = 111111;
     $gateway = new \Intellectmoney\Merchant\Payment();
     
     
