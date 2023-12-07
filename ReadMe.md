@@ -1,8 +1,15 @@
 # Intellectmoney gateway 
 
+## Generate a secretKey:
+1. Go here: https://lk.intellectmoney.ru/profile/security/api and generate credentials and set all of them in your code  by `\Intellectmoney\Configurations::` static propertes. 
+2. Then go here and select your shop for change: https://lk.intellectmoney.ru/eshops
+3. Now put the secretKey in the "Connecting the store" tab, in its related input field.
+
+## Do Pay
 ```
 try{
     \Intellectmoney\Configurations::$eshopId = 111111;
+    \Intellectmoney\Configurations::$secretKey = "111111";
     $gateway = new \Intellectmoney\Merchant\Payment();
     
     
